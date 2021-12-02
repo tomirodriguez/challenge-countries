@@ -21,3 +21,8 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+src/topojson/countries-10m.json
+src/topojson/countries-50m.json
+
+topojson-scripts

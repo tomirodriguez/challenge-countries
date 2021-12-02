@@ -1,0 +1,98 @@
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+pre,
+a,
+em,
+img,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+embed,
+figure,
+figcaption,
+footer,
+header,
+menu,
+nav,
+section,
+audio,
+video,
+button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  line-height: 100%;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+figcaption,
+figure,
+footer,
+header,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 100%;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+a,
+button {
+  cursor: pointer;
+}
+
+input,
+select,
+button,
+a {
+  font: inherit;
+  text-decoration: none;
+  color: inherit;
+  outline: none;
+  background: none;
+  border: none;
+}
