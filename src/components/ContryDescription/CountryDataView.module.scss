@@ -1,0 +1,23 @@
+@use "../../styles/constants" as c;
+
+.countryDataView {
+  padding: 20px;
+}
+
+.item {
+  text-align: center;
+
+  .info {
+    font-size: 18px;
+    padding-bottom: 7px;
+    margin-bottom: 7px;
+    border-bottom: 1px solid c.$gray;
+    min-width: 40%;
+    line-height: 120%;
+  }
+
+  .title {
+    font-size: 14px;
+    font-size: 400;
+  }
+}

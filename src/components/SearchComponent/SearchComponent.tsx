@@ -9,6 +9,7 @@ import SearchInput from "../SearchInput/SearchInput";
 interface PropTypes {
   countriesData: CountriesData;
   onFilter: (countries: Country[]) => void;
+  onSubmit: () => void;
 }
 
 const sortAlphabetically = (a: Option, b: Option) => {
@@ -21,7 +22,7 @@ const sortAlphabetically = (a: Option, b: Option) => {
   return 0;
 };
 
-export default function SearchComponent({ countriesData, onFilter }: PropTypes) {
+export default function SearchComponent({ countriesData, onFilter, onSubmit }: PropTypes) {
   const { countries, currencies, continents } = countriesData;
   const [nameFilter, setNameFilter] = useState<string>("");
   const [continentFilter, setContinentFilter] = useState<Continent[]>(continents);
@@ -58,13 +59,25 @@ export default function SearchComponent({ countriesData, onFilter }: PropTypes) 
       setCurrencyFilter(newCurrenciesSet);
     }
   };
+
+  const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") {
+      onSubmit();
+    }
+  };
+
   return (
     <div className="d-grid grid-col-2">
       <label htmlFor="searchInput" hidden>
         Search Field
       </label>
       <div className="grid-ce-2">
-        <SearchInput name="searchInput" onChange={setNameFilter} placeholder="Search a country" />
+        <SearchInput
+          name="searchInput"
+          onChange={setNameFilter}
+          placeholder="Search a country"
+          onKeyPress={handleKeyPress}
+        />
       </div>
       <MultiSelect
         options={continents

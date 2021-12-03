@@ -1,9 +1,8 @@
 import { ApolloError, useQuery } from "@apollo/client";
-import { log } from "console";
 import gql from "graphql-tag";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { willLoad, loadFinished } from "../reducers/loadingDataReducer";
+import { loadFinished, willLoad } from "../reducers/loadingDataReducer";
 import { Continent, Country, CountryDTO } from "../utils/models";
 
 const GET_COUNTRIES = gql`
@@ -42,9 +41,9 @@ const useCountries = (): {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (loading) dispatch(willLoad());
+    if (!loaded) dispatch(willLoad());
     else dispatch(loadFinished());
-  }, [loading, dispatch]);
+  }, [loaded, dispatch]);
 
   useEffect(() => {
     if (data) {

@@ -1,0 +1,21 @@
+@use "../../styles/constants" as c;
+
+.backButton {
+  font-size: 15px;
+  color: c.$textColor;
+  width: fit-content;
+  margin-bottom: 10px;
+
+  .backIcon {
+    margin-right: 10px;
+  }
+}
+
+.title {
+  font-size: 40px;
+  flex-grow: 1;
+
+  & > * {
+    margin-right: 15px;
+  }
+}

@@ -10,6 +10,7 @@ export const selectedCountrySlice = createSlice({
       state.country = null;
     },
     set: (state, action) => {
+      if (state.country === action.payload) return;
       state.country = action.payload;
     },
   },
