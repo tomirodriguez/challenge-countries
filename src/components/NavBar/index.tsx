@@ -1,4 +1,3 @@
-import { Link as div } from "react-router-dom";
 import CrehanaLogo from "../CrehanaLogo";
 import styles from "./styles.module.scss";
 
