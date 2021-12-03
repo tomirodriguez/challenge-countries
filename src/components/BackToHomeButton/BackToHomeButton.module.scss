@@ -1,0 +1,12 @@
+@use "../../styles/constants" as c;
+
+.backButton {
+  font-size: 15px;
+  color: c.$textColorDark;
+  width: fit-content;
+  margin-bottom: 10px;
+
+  .backIcon {
+    margin-right: 10px;
+  }
+}

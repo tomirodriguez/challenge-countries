@@ -3,6 +3,7 @@ import { Navigate, Route, Routes } from "react-router-dom";
 import NavBar from "./components/NavBar/NavBar";
 import WorldMap from "./components/WordlMap/WorldMap";
 import useBreakpoints, { Breakpoint } from "./hooks/useBreakpoints";
+import ErrorView from "./pages/404";
 import CountryView from "./pages/CountryPage/CountryPage";
 import Home from "./pages/HomePage";
 
@@ -39,7 +40,7 @@ function App() {
         <NavBar />
       </header>
       <Routes>
-        <Route path="/404" element={<div>404</div>} />
+        <Route path="/404" element={<ErrorView />} />
         <Route path="*" element={<MainView />}></Route>
       </Routes>
     </div>

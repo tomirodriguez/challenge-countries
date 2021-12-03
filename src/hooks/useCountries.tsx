@@ -69,8 +69,6 @@ const useCountries = (): {
     if (!loading && !data) setLoaded(true);
   }, [data, loading]);
 
-  console.log(countriesData);
-  
   return {
     loaded,
     error,

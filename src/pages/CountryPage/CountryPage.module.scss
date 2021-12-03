@@ -1,17 +1,6 @@
 @use "../../styles/constants" as c;
 @use "../../styles/mixins" as *;
 
-.backButton {
-  font-size: 15px;
-  color: c.$textColorDark;
-  width: fit-content;
-  margin-bottom: 10px;
-
-  .backIcon {
-    margin-right: 10px;
-  }
-}
-
 .title {
   flex-grow: 1;
   font-size: 18px;

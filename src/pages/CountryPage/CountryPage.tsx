@@ -1,8 +1,7 @@
-import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import BackToHomeButton from "../../components/BackToHomeButton/BackToHomeButton";
 import CountryDataView from "../../components/CountryDescription/CountryDescription";
 import LoadingScreen from "../../components/LoadingScreen/LoadingScreen";
 import useCountry from "../../hooks/useCountry";
@@ -12,11 +11,18 @@ import styles from "./CountryPage.module.scss";
 
 export default function CountryView() {
   const { code = "" } = useParams();
-  const { countryData } = useCountry(code);
+  const { loading, error, countryData } = useCountry(code);
   const dispatch = useDispatch();
   const selectedCountry = useSelector((state: RootState) => state.selectedCountry.country);
   const [pageLoaded, setPageLoaded] = useState<boolean>(false);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (error && !loading) {
+      dispatch(set(null));
+      navigate("404");
+    }
+  }, [error, navigate, dispatch, loading]);
 
   useEffect(() => {
     if (countryData) {
@@ -38,17 +44,10 @@ export default function CountryView() {
     }
   }, [navigate, dispatch, selectedCountry, code, pageLoaded]);
 
-  const handleBackToHome = () => {
-    dispatch(set(null));
-  };
-
   return (
     <>
       <div className="topHeaderContainer grid-ce-1 grid-md-ce-2 grid-lg-ce-3 grid-xl-ce-4 d-flex flex-column">
-        <Link className={`d-flex ai-center ${styles.backButton}`} to="/" onClick={handleBackToHome}>
-          <FontAwesomeIcon className={styles.backIcon} icon={faChevronLeft} width="10px" height="10px" />
-          <span>Back to Home</span>
-        </Link>
+        <BackToHomeButton />
         {countryData && (
           <div className={`d-flex ai-center ${styles.title}`}>
             <h2>{countryData.continent.name}</h2>

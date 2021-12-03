@@ -1,4 +1,4 @@
-import { ApolloError, useQuery } from "@apollo/client";
+import { useQuery } from "@apollo/client";
 import gql from "graphql-tag";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
@@ -38,10 +38,11 @@ const useCountry = (
   code: string
 ): {
   loading: boolean;
-  error: ApolloError | undefined;
+  error: boolean;
   countryData: CountryDescription | null;
 } => {
   const { loading, error, data } = useQuery(GET_COUNTRY, { variables: { code } });
+  const [hasError, setHasError] = useState<boolean>(false);
   const [country, setCountry] = useState<CountryDescription | null>(null);
 
   const dispatch = useDispatch();
@@ -52,15 +53,19 @@ const useCountry = (
 
   useEffect(() => {
     if (data) {
+      if (!data.country) {
+        setHasError(true);
+        return;
+      }
       const { currency, ...otherProps } = data.country;
       const newCountry = { ...otherProps, currencies: currency?.split(",") || [] };
       setCountry(newCountry);
     }
 
     if (data && !loading) dispatch(loadFinished());
-  }, [data, dispatch, loading]);
+  }, [data, dispatch, loading, error]);
 
-  return { loading, error, countryData: country };
+  return { loading, error: hasError, countryData: country };
 };
 
 export default useCountry;
