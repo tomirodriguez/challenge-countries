@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router";
-import SearchComponent from "../components/SearchComponent/SearchComponent";
-import SearchView from "../components/SearchResults/SearchResults";
+import SearchComponent from "../components/SearchComponent";
+import SearchView from "../components/SearchResults";
 import useCountries from "../hooks/useCountries";
 import { set } from "../reducers/selectedCountryReducer";
 import { RootState } from "../store";

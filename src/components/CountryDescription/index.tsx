@@ -1,5 +1,5 @@
 import { CountryDescription } from "../../hooks/useCountry";
-import styles from "./CountryDataView.module.scss";
+import styles from "./styles.module.scss";
 
 interface PropTypes {
   country: CountryDescription;

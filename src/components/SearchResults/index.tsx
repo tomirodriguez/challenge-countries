@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Country } from "../../utils/models";
-import LoadingScreen from "../LoadingScreen/LoadingScreen";
-import styles from "./SearchResults.module.scss";
+import LoadingScreen from "../LoadingScreen";
+import styles from "./styles.module.scss";
 
 interface PropTypes {
   countries: Country[];

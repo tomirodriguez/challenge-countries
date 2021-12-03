@@ -3,12 +3,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import CountryDataView from "../../components/CountryDescription/CountryDataView";
-import LoadingScreen from "../../components/LoadingScreen/LoadingScreen";
+import CountryDataView from "../../components/CountryDescription";
+import LoadingScreen from "../../components/LoadingScreen";
 import useCountry from "../../hooks/useCountry";
 import { set } from "../../reducers/selectedCountryReducer";
 import { RootState } from "../../store";
-import styles from "./CountryPage.module.scss";
+import styles from "./styles.module.scss";
 
 export default function CountryView() {
   const { code = "" } = useParams();
