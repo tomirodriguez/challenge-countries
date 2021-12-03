@@ -24,5 +24,6 @@ yarn-error.log*
 
 src/topojson/countries-10m.json
 src/topojson/countries-50m.json
+src/topojson/countries-50m-opt.json
 
 topojson-scripts

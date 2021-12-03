@@ -1,10 +1,12 @@
+@use '../../styles/constants' as c;
+
 .inputContainer {
   position: relative;
-  color: #575657;
+  color: c.$textColorDark;
   width: 100%;
   display: flex;
   align-items: center;
-  background: #8e8e931f 0% 0% no-repeat padding-box;
+  background-color: c.$bg;
   border: 1px solid #8e8e9341;
   border-radius: 10px;
 
@@ -13,11 +15,12 @@
     height: 100%;
     cursor: pointer;
     width: 48px;
+    color: c.$textColorDark;
+    opacity: 0.5;
   }
 
   .closeIcon {
     right: 0px;
-    color: #d6d6d6;
   }
 
   .searchInput {
@@ -25,7 +28,6 @@
     height: 36px;
     margin: 0 48px;
     font-size: 17px;
-    color: #575657;
-    background-color: transparent;
+    color: c.$textColorDark;
   }
 }

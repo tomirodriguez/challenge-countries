@@ -3,7 +3,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import CountryDataView from "../../components/ContryDescription/CountryDataView";
+import CountryDataView from "../../components/CountryDescription/CountryDataView";
+import LoadingScreen from "../../components/LoadingScreen/LoadingScreen";
 import useCountry from "../../hooks/useCountry";
 import { set } from "../../reducers/selectedCountryReducer";
 import { RootState } from "../../store";
@@ -37,10 +38,14 @@ export default function CountryView() {
     }
   }, [navigate, dispatch, selectedCountry, code, pageLoaded]);
 
+  const handleBackToHome = () => {
+    dispatch(set(null));
+  };
+
   return (
     <>
       <div className="mapTopContainer grid-ce-1 grid-md-ce-2 grid-lg-ce-3 grid-xl-ce-4 d-flex flex-column">
-        <Link className={`d-flex ai-center ${styles.backButton}`} to="/">
+        <Link className={`d-flex ai-center ${styles.backButton}`} to="/" onClick={handleBackToHome}>
           <FontAwesomeIcon className={styles.backIcon} icon={faChevronLeft} width="10px" height="10px" />
           <span>Back to Home</span>
         </Link>
@@ -53,7 +58,10 @@ export default function CountryView() {
           </div>
         )}
       </div>
-      <div className={`card lateralView`}>{countryData && <CountryDataView country={countryData} />}</div>
+      <div className={`card lateralView`}>
+        {countryData && <CountryDataView country={countryData} />}
+        <LoadingScreen />
+      </div>
     </>
   );
 }

@@ -2,7 +2,7 @@ import { FeatureCollection, GeometryCollection } from "geojson";
 import { useEffect, useState } from "react";
 import { feature } from "topojson-client";
 import { Topology } from "topojson-specification";
-import topology from "../topojson/countries-50m-opt.json";
+import topology from "../topojson/countries-50m-opt-continents.json";
 
 export interface WorldTopology {
   countries: FeatureCollection<GeometryCollection>;

@@ -20,7 +20,6 @@ export default function Home() {
   }, [navigate, selectedCountry]);
 
   useEffect(() => {
-    dispatch(set(null));
   }, [dispatch]);
 
   useEffect(() => {

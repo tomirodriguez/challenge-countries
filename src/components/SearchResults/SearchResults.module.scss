@@ -1,13 +1,38 @@
+@use "../../styles/constants" as c;
+
 .searchView {
+  background-color: c.$bg;
+
   ul {
     overflow: auto;
+
+    &::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    /* Track */
+    &::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+      background: c.$primary;
+      border-radius: 5px;
+    }
+
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+      background: c.$primaryDark;
+    }
 
     li {
       font-size: 16px;
       cursor: pointer;
 
       &:hover {
-        background-color: rgba($color: #000000, $alpha: 0.1);
+        background-color: c.$primaryLight;
+        color: c.$textColorLight;
       }
 
       a {

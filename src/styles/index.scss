@@ -6,8 +6,8 @@
 
 body {
   font-family: "Roboto", sans-serif;
-  color: $textColor;
-  background-color: $bodyBgColor;
+  color: $textColorDark;
+  background-color: $bgDark;
 }
 
 hr {
@@ -57,6 +57,16 @@ hr {
 
 .lateralView {
   height: 500px;
+  background-color: $bg;
+  position: relative;
+
+  @include tablet {
+    grid-column-end: span 2;
+  }
+
+  @include desktop {
+    grid-column-end: span 1;
+  }
 }
 
 .mapTopContainer {

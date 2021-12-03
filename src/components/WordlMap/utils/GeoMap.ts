@@ -16,8 +16,9 @@ export default class GeoMap {
   private selectedCountryCode: string | null;
   private featuresHash: { [code: string]: Feature };
   private observers: MapObserver[];
+  private fillFunction: (feature: Feature) => string;
 
-  constructor(svgReactElement: SVGSVGElement, topology: WorldTopology) {
+  constructor(svgReactElement: SVGSVGElement, topology: WorldTopology, fillFunction: (feature: Feature) => string) {
     this.svgReactElement = svgReactElement;
     this.topology = topology;
     this.path = this.createPath();
@@ -30,6 +31,7 @@ export default class GeoMap {
       features[feature.id || index] = feature;
     });
     this.featuresHash = features;
+    this.fillFunction = fillFunction;
   }
 
   private createPath() {
@@ -38,7 +40,6 @@ export default class GeoMap {
 
   private createProjection() {
     const { width, height } = this.svgReactElement.getBoundingClientRect();
-
     const projection = geoNaturalEarth1().fitSize([width, height], this.topology.countries).precision(1000);
 
     return projection;
@@ -68,10 +69,12 @@ export default class GeoMap {
         dy = bounds[1][1] - bounds[0][1],
         x = (bounds[0][0] + bounds[1][0]) / 2,
         y = (bounds[0][1] + bounds[1][1]) / 2,
-        scaleFactor = 0.5;
+        borderDistanceFactor = 0.1;
 
-      this.currentScale = scaleFactor / Math.max(dx / width, dy / height);
-      const translate = [width / 2 - this.currentScale * x, height / 2 - this.currentScale * y];
+      const scale = Math.max(dx / width, dy / height);
+
+      this.currentScale = Math.max(1 / scale - borderDistanceFactor / scale, 1);
+      const translate = [width / 2 - this.currentScale * x, Math.min(height / 2 - this.currentScale * y, 0)];
       this.drawCountries([feature]);
 
       g.transition().duration(500).attr("transform", `translate(${translate})scale(${this.currentScale})`);
@@ -87,6 +90,7 @@ export default class GeoMap {
     const scale = this.currentScale;
     const active = this.selectedCountryCode;
     const updateObservers = this.updateObservers;
+    const fillFunction = this.fillFunction;
 
     select("#map")
       .selectAll(`.country`)
@@ -102,9 +106,7 @@ export default class GeoMap {
               return feature.id || "";
             })
             .attr("d", path)
-            .style("fill", function (d) {
-              return "#c9c9c9";
-            })
+            .style("fill", fillFunction)
             .style("stroke", "white")
             .style("cursor", "pointer")
             .style("opacity", "0.7")
@@ -113,27 +115,20 @@ export default class GeoMap {
               event.stopPropagation();
               updateObservers(feature.id);
             })
-            .style("opacity", "1")
+            .style("opacity", "0.7")
             .append("title")
             .text((d) => d.properties?.name || "");
         },
         function (update) {
-          return update
-            .style("stroke-width", `${STROKE_WIDTH / scale}px`)
-            .style("fill", (d) => {
-              if (d.id === active) return "green";
-              return "#c9c9c9";
-            })
-            .style("opacity", (d) => {
-              if (d.id === active) return "1";
-              return "0.7";
-            });
+          return update.style("stroke-width", `${STROKE_WIDTH / scale}px`).style("opacity", (d) => {
+            if (d.id === active) return "1";
+            return "0.7";
+          });
         },
         function (exit) {
           return exit
-            .style("fill", "#ccc")
             .style("opacity", function (d) {
-              return "0.7";
+              return "0.3";
             })
             .style("stroke-width", `${STROKE_WIDTH / scale}px`);
         }
@@ -148,60 +143,13 @@ export default class GeoMap {
 
   drawMap() {
     if (this.topology && this.topology.countries) {
+      this.path = this.createPath();
       this.svgReactElement.innerHTML = "";
-      const svg = select("svg");
+      const svg = select(this.svgReactElement);
       svg.on("click", () => this.updateObservers(null));
       const g = svg.append("g");
       g.attr("id", "map");
       this.drawCountries(this.topology.countries.features);
-      // const svg = select(`#${this.svgReactElement.id}`);
-
-      //   .selectAll(".country")
-      //   .data(this.topology.countries.features, function (d: any) {
-      //     return d.properties.id;
-      //   })
-      //   .join(
-      //     function (enter) {
-      //       return enter
-      //         .append("path")
-      //         .attr("class", ".country")
-      //         .attr("id", (feature: any) => {
-      //           return feature.properties?.id || "";
-      //         })
-      //         .attr("d", path)
-      //         .style("fill", function (d) {
-      //           return "#c9c9c9";
-      //         })
-      //         .style("stroke", "white")
-      //         .style("stroke-width", `${STROKE_WIDTH / scale}px`)
-      //         .style("cursor", "pointer")
-      //         .on("click", (event: any, feature) => {
-      //           event.stopPropagation();
-      //           // const newId = regionsToShow.includes(feature.properties?.id)
-      //           //   ? feature.properties?.id
-      //           //   : "";
-      //           // setCurrentSelection(newId);
-      //           // updateObservers();
-      //         })
-      //         .style("opacity", "1")
-      //         .append("title")
-      //         .text((d) => d.properties?.name || "");
-      //     },
-
-      //     function (update) {
-      //       return update.style("stroke-width", `${STROKE_WIDTH / scale}px`);
-      //     }
-      //   );
     }
-    // const countries = feature(this.topology, this.topology.objects.countries);
-
-    // console.log("COUNTRIES", countries);
-
-    // this.svgReactElement.innerHTML = "";
-
-    // const svg = select(`#${this.svgReactElement.id}`);
-    // svg.append("g").attr("id", "map");
-
-    // this.drawCountries(countries.features as any);
   }
 }

@@ -1,26 +1,34 @@
-import React from "react";
+import { useEffect, useState } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
-import LoadingScreen from "./components/LoadingScreen/LoadingScreen";
 import NavBar from "./components/NavBar/NavBar";
 import WorldMap from "./components/WordlMap/WorldMap";
+import useBreakpoints, { Breakpoint } from "./hooks/useBreakpoints";
 import CountryView from "./pages/CountryPage/CountryPage";
 import Home from "./pages/HomePage";
 
 const MainView = () => {
+  const breakpoint = useBreakpoints();
+  const [mapWasRendered, setMapWasRendered] = useState<boolean>(false);
+
+  useEffect(() => {
+    if (!mapWasRendered && (breakpoint === Breakpoint.DESKTOP || breakpoint === Breakpoint.WIDESCREEN)) {
+      setMapWasRendered(true);
+    }
+  }, [breakpoint, mapWasRendered]);
+
   return (
-    <>
-      <main className="container d-flex flex-column" style={{ flexGrow: 1 }}>
-        <div className="d-grid grid-template">
+    <main className="container d-flex flex-column" style={{ flexGrow: 1 }}>
+      <div className="d-grid grid-template">
+        {(mapWasRendered || breakpoint === Breakpoint.DESKTOP || breakpoint === Breakpoint.WIDESCREEN) && (
           <WorldMap className="d-none d-lg-grid grid-lg-ce-2 grid-xl-ce-3 grid-lg-rs-2" />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/country/:code" element={<CountryView />} />
-            <Route path="*" element={<Navigate replace to="/404" />} />
-          </Routes>
-        </div>
-      </main>
-      <LoadingScreen />
-    </>
+        )}
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/country/:code" element={<CountryView />} />
+          <Route path="*" element={<Navigate replace to="/404" />} />
+        </Routes>
+      </div>
+    </main>
   );
 };
 

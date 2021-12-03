@@ -1,3 +1,7 @@
+@use '../../styles/constants' as c;
+
 .navBar {
   height: 80px;
+  background-color: c.$primary;
+  color: c.$textColorLight
 }

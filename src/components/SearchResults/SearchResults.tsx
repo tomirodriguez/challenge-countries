@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Country } from "../../utils/models";
+import LoadingScreen from "../LoadingScreen/LoadingScreen";
 import styles from "./SearchResults.module.scss";
 
 interface PropTypes {
@@ -9,7 +10,7 @@ interface PropTypes {
 
 export default function SearchView({ countries, onCountrySelected }: PropTypes) {
   return (
-    <div className={`d-flex card lateralView ${styles.searchView}`}>
+    <div className={`d-flex card lateralView ${styles.searchView}`} style={{ position: "relative" }}>
       <ul className="w-100">
         {countries.map((country) => {
           return (
@@ -21,6 +22,7 @@ export default function SearchView({ countries, onCountrySelected }: PropTypes) 
           );
         })}
       </ul>
+      <LoadingScreen />
     </div>
   );
 }

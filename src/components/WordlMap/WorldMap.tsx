@@ -1,7 +1,7 @@
 import { HTMLProps, useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import useBreakpoints from "../../hooks/useBreakpoints";
 import useMap from "../../hooks/useMap";
-import { set } from "../../reducers/selectedCountryReducer";
 import { RootState } from "../../store";
 import styles from "./WorldMap.module.scss";
 
@@ -9,6 +9,7 @@ const WorldMap = ({ className }: HTMLProps<HTMLDivElement>) => {
   const svgRef = useRef<SVGSVGElement>(null);
   const selectedCountry = useSelector((state: RootState) => state.selectedCountry.country);
   const dispatch = useDispatch();
+  const breakpoint = useBreakpoints();
 
   const map = useMap({
     svgRef,
@@ -16,14 +17,9 @@ const WorldMap = ({ className }: HTMLProps<HTMLDivElement>) => {
 
   useEffect(() => {
     if (map) {
-      const mapObserver = (code: string | null) => {
-        dispatch(set(code));
-      };
-
-      map.addObserver(mapObserver);
       map.drawMap();
     }
-  }, [map, dispatch]);
+  }, [map, dispatch, breakpoint]);
 
   useEffect(() => {
     if (map) {
@@ -33,7 +29,7 @@ const WorldMap = ({ className }: HTMLProps<HTMLDivElement>) => {
 
   return (
     <div className={`card ${className} ${styles.mapContainer}`.trim()}>
-      <svg className={styles.geoMap} id="worldMap" ref={svgRef} width="950px" height="500px" />
+      <svg className={styles.worldMap} id="worldMap" ref={svgRef} width="950px" height="500px" />
     </div>
   );
 };
