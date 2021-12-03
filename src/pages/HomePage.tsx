@@ -42,7 +42,7 @@ export default function Home() {
 
   return (
     <>
-      <div className="mapTopContainer grid-ce-1 grid-md-ce-2 grid-lg-ce-3 grid-xl-ce-4">
+      <div className="topHeaderContainer grid-ce-1 grid-md-ce-2 grid-lg-ce-3 grid-xl-ce-4">
         <SearchComponent countriesData={countriesData} onFilter={handleCountriesFiltering} onSubmit={handleSubmit} />
       </div>
       <SearchView countries={countriesToShow} onCountrySelected={handleCountrySelected} />

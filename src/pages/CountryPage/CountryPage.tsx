@@ -44,7 +44,7 @@ export default function CountryView() {
 
   return (
     <>
-      <div className="mapTopContainer grid-ce-1 grid-md-ce-2 grid-lg-ce-3 grid-xl-ce-4 d-flex flex-column">
+      <div className="topHeaderContainer grid-ce-1 grid-md-ce-2 grid-lg-ce-3 grid-xl-ce-4 d-flex flex-column">
         <Link className={`d-flex ai-center ${styles.backButton}`} to="/" onClick={handleBackToHome}>
           <FontAwesomeIcon className={styles.backIcon} icon={faChevronLeft} width="10px" height="10px" />
           <span>Back to Home</span>

@@ -16,7 +16,7 @@ export default function SearchView({ countries, onCountrySelected }: PropTypes) 
           return (
             <li key={country.code} onClick={() => onCountrySelected(country)}>
               <Link className="d-flex" to={`country/${country.code}`}>
-                {country.name}
+                <p>{country.name}</p>
               </Link>
             </li>
           );

@@ -69,6 +69,8 @@ hr {
   }
 }
 
-.mapTopContainer {
-  height: 96px;
+.topHeaderContainer {
+  @include desktop {
+    height: 96px;
+  }
 }
