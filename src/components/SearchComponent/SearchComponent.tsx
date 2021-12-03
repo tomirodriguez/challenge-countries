@@ -67,11 +67,11 @@ export default function SearchComponent({ countriesData, onFilter, onSubmit }: P
   };
 
   return (
-    <div className="d-grid grid-col-2">
+    <div className="d-grid grid-col-1 grid-lg-col-2">
       <label htmlFor="searchInput" hidden>
         Search Field
       </label>
-      <div className="grid-ce-2">
+      <div className="grid-lg-ce-2">
         <SearchInput
           name="searchInput"
           onChange={setNameFilter}

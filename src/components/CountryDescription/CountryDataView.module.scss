@@ -14,7 +14,15 @@
     margin-bottom: 7px;
     border-bottom: 1px solid c.$gray;
     min-width: 40%;
-    line-height: 120%;
+    line-height: 24px;
+
+    .languages {
+      margin-bottom: 6px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
   }
 
   .title {

@@ -22,7 +22,7 @@ export default function CountryDataView({ country }: PropTypes) {
       <li className={`d-flex flex-column ai-center jc-center ${styles.item}`}>
         <div className={styles.info}>
           {country.languages.map((language) => (
-            <div key={language.code}>{`${language.name} (${language.native})`}</div>
+            <div className={styles.languages} key={language.code}>{`${language.name} (${language.native})`}</div>
           ))}
         </div>
         <h4 className={styles.title}>Languages</h4>
