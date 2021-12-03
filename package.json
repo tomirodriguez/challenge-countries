@@ -32,7 +32,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --transformIgnorePatterns \"node_modules/(?!your-module-name)/\"",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -59,6 +59,7 @@
     "@types/d3": "^7.1.0",
     "@types/d3-selection": "^1.0.0",
     "@types/geojson": "^7946.0.8",
+    "@types/testing-library__react": "^10.2.0",
     "@types/topojson-client": "^3.1.0"
   }
 }

@@ -1,0 +1,90 @@
+{
+  "countries": [
+    {
+      "continent": {
+        "__typename": "Continent",
+        "code": "EU",
+        "name": "Europe"
+      },
+      "__typename": "Country",
+      "code": "AD",
+      "name": "Andorra",
+      "currencies": ["EUR"]
+    },
+    {
+      "continent": {
+        "__typename": "Continent",
+        "code": "AS",
+        "name": "Asia"
+      },
+      "__typename": "Country",
+      "code": "AE",
+      "name": "United Arab Emirates",
+      "currencies": ["AED"]
+    },
+    {
+      "continent": {
+        "__typename": "Continent",
+        "code": "AS",
+        "name": "Asia"
+      },
+      "__typename": "Country",
+      "code": "AF",
+      "name": "Afghanistan",
+      "currencies": ["AFN"]
+    },
+    {
+      "continent": {
+        "__typename": "Continent",
+        "code": "NA",
+        "name": "North America"
+      },
+      "__typename": "Country",
+      "code": "AG",
+      "name": "Antigua and Barbuda",
+      "currencies": ["XCD"]
+    },
+    {
+      "continent": {
+        "__typename": "Continent",
+        "code": "NA",
+        "name": "North America"
+      },
+      "__typename": "Country",
+      "code": "AI",
+      "name": "Anguilla",
+      "currencies": ["XCD"]
+    }
+  ],
+  "currencies": {},
+  "continents": [
+    {
+      "code": "EU",
+      "name": "Europe"
+    },
+    {
+      "code": "AS",
+      "name": "Asia"
+    },
+    {
+      "code": "NA",
+      "name": "North America"
+    },
+    {
+      "code": "AF",
+      "name": "Africa"
+    },
+    {
+      "code": "AN",
+      "name": "Antarctica"
+    },
+    {
+      "code": "SA",
+      "name": "South America"
+    },
+    {
+      "code": "OC",
+      "name": "Oceania"
+    }
+  ]
+}

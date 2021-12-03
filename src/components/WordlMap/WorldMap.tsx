@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import useBreakpoints from "../../hooks/useBreakpoints";
 import useMap from "../../hooks/useMap";
 import { RootState } from "../../store";
-import styles from "./styles.module.scss";
+import styles from "./WorldMap.module.scss";
 
 const WorldMap = ({ className }: HTMLProps<HTMLDivElement>) => {
   const svgRef = useRef<SVGSVGElement>(null);

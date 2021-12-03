@@ -1,5 +1,5 @@
 import CrehanaLogo from "../CrehanaLogo";
-import styles from "./styles.module.scss";
+import styles from "./NavBar.module.scss";
 
 export default function NavBar() {
   return (

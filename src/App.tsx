@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
-import NavBar from "./components/NavBar";
-import WorldMap from "./components/WordlMap";
+import NavBar from "./components/NavBar/NavBar";
+import WorldMap from "./components/WordlMap/WorldMap";
 import useBreakpoints, { Breakpoint } from "./hooks/useBreakpoints";
-import CountryView from "./pages/CountryPage";
+import CountryView from "./pages/CountryPage/CountryPage";
 import Home from "./pages/HomePage";
 
 const MainView = () => {

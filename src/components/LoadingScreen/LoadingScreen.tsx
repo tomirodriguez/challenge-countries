@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import { RootState } from "../../store";
-import Loader from "./Loader";
+import Loader from "./Loader/Loader";
 
 export default function LoadingScreen() {
   const isLoading = useSelector((state: RootState) => state.loadingData.isLoading);

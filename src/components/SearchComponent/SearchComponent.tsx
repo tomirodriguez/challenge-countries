@@ -3,8 +3,8 @@ import { ActionMeta } from "react-select";
 import { CountriesData } from "../../hooks/useCountries";
 import useCountriesFilter from "../../hooks/useCountriesFilter";
 import { Continent, Country } from "../../utils/models";
-import MultiSelect, { Option } from "../MultiSelect";
-import SearchInput from "../SearchInput";
+import MultiSelect, { Option } from "../MultiSelect/MultiSelect";
+import SearchInput from "../SearchInput/SearchInput";
 
 interface PropTypes {
   countriesData: CountriesData;

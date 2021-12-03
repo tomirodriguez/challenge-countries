@@ -1,7 +1,7 @@
 import { faSearch, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { ChangeEvent, HTMLProps, useRef, useState } from "react";
-import styles from "./styles.module.scss";
+import styles from "./SearchInput.module.scss";
 
 type ModifiedInputElement = Omit<HTMLProps<HTMLInputElement>, "onChange">;
 
