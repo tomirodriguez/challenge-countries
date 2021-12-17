@@ -1,0 +1,447 @@
+{
+  "data": {
+    "countries": [
+      {
+        "code": "AD",
+        "name": "Andorra",
+        "continent": {
+          "code": "EU",
+          "name": "Europe"
+        },
+        "currency": "EUR"
+      },
+      {
+        "code": "AE",
+        "name": "United Arab Emirates",
+        "continent": {
+          "code": "AS",
+          "name": "Asia"
+        },
+        "currency": "AED"
+      },
+      {
+        "code": "AF",
+        "name": "Afghanistan",
+        "continent": {
+          "code": "AS",
+          "name": "Asia"
+        },
+        "currency": "AFN"
+      },
+      {
+        "code": "AG",
+        "name": "Antigua and Barbuda",
+        "continent": {
+          "code": "NA",
+          "name": "North America"
+        },
+        "currency": "XCD"
+      },
+      {
+        "code": "AI",
+        "name": "Anguilla",
+        "continent": {
+          "code": "NA",
+          "name": "North America"
+        },
+        "currency": "XCD"
+      },
+      {
+        "code": "AL",
+        "name": "Albania",
+        "continent": {
+          "code": "EU",
+          "name": "Europe"
+        },
+        "currency": "ALL"
+      },
+      {
+        "code": "AM",
+        "name": "Armenia",
+        "continent": {
+          "code": "AS",
+          "name": "Asia"
+        },
+        "currency": "AMD"
+      },
+      {
+        "code": "AO",
+        "name": "Angola",
+        "continent": {
+          "code": "AF",
+          "name": "Africa"
+        },
+        "currency": "AOA"
+      },
+      {
+        "code": "AQ",
+        "name": "Antarctica",
+        "continent": {
+          "code": "AN",
+          "name": "Antarctica"
+        },
+        "currency": null
+      },
+      {
+        "code": "AR",
+        "name": "Argentina",
+        "continent": {
+          "code": "SA",
+          "name": "South America"
+        },
+        "currency": "ARS"
+      },
+      {
+        "code": "AS",
+        "name": "American Samoa",
+        "continent": {
+          "code": "OC",
+          "name": "Oceania"
+        },
+        "currency": "USD"
+      },
+      {
+        "code": "AT",
+        "name": "Austria",
+        "continent": {
+          "code": "EU",
+          "name": "Europe"
+        },
+        "currency": "EUR"
+      },
+      {
+        "code": "AU",
+        "name": "Australia",
+        "continent": {
+          "code": "OC",
+          "name": "Oceania"
+        },
+        "currency": "AUD"
+      },
+      {
+        "code": "AW",
+        "name": "Aruba",
+        "continent": {
+          "code": "NA",
+          "name": "North America"
+        },
+        "currency": "AWG"
+      },
+      {
+        "code": "AX",
+        "name": "Åland",
+        "continent": {
+          "code": "EU",
+          "name": "Europe"
+        },
+        "currency": "EUR"
+      },
+      {
+        "code": "AZ",
+        "name": "Azerbaijan",
+        "continent": {
+          "code": "AS",
+          "name": "Asia"
+        },
+        "currency": "AZN"
+      },
+      {
+        "code": "BA",
+        "name": "Bosnia and Herzegovina",
+        "continent": {
+          "code": "EU",
+          "name": "Europe"
+        },
+        "currency": "BAM"
+      },
+      {
+        "code": "BB",
+        "name": "Barbados",
+        "continent": {
+          "code": "NA",
+          "name": "North America"
+        },
+        "currency": "BBD"
+      },
+      {
+        "code": "BD",
+        "name": "Bangladesh",
+        "continent": {
+          "code": "AS",
+          "name": "Asia"
+        },
+        "currency": "BDT"
+      },
+      {
+        "code": "BE",
+        "name": "Belgium",
+        "continent": {
+          "code": "EU",
+          "name": "Europe"
+        },
+        "currency": "EUR"
+      },
+      {
+        "code": "BF",
+        "name": "Burkina Faso",
+        "continent": {
+          "code": "AF",
+          "name": "Africa"
+        },
+        "currency": "XOF"
+      },
+      {
+        "code": "BG",
+        "name": "Bulgaria",
+        "continent": {
+          "code": "EU",
+          "name": "Europe"
+        },
+        "currency": "BGN"
+      },
+      {
+        "code": "BH",
+        "name": "Bahrain",
+        "continent": {
+          "code": "AS",
+          "name": "Asia"
+        },
+        "currency": "BHD"
+      },
+      {
+        "code": "BI",
+        "name": "Burundi",
+        "continent": {
+          "code": "AF",
+          "name": "Africa"
+        },
+        "currency": "BIF"
+      },
+      {
+        "code": "BJ",
+        "name": "Benin",
+        "continent": {
+          "code": "AF",
+          "name": "Africa"
+        },
+        "currency": "XOF"
+      },
+      {
+        "code": "BL",
+        "name": "Saint Barthélemy",
+        "continent": {
+          "code": "NA",
+          "name": "North America"
+        },
+        "currency": "EUR"
+      },
+      {
+        "code": "BM",
+        "name": "Bermuda",
+        "continent": {
+          "code": "NA",
+          "name": "North America"
+        },
+        "currency": "BMD"
+      },
+      {
+        "code": "BN",
+        "name": "Brunei",
+        "continent": {
+          "code": "AS",
+          "name": "Asia"
+        },
+        "currency": "BND"
+      },
+      {
+        "code": "BO",
+        "name": "Bolivia",
+        "continent": {
+          "code": "SA",
+          "name": "South America"
+        },
+        "currency": "BOB,BOV"
+      },
+      {
+        "code": "BQ",
+        "name": "Bonaire",
+        "continent": {
+          "code": "NA",
+          "name": "North America"
+        },
+        "currency": "USD"
+      },
+      {
+        "code": "BR",
+        "name": "Brazil",
+        "continent": {
+          "code": "SA",
+          "name": "South America"
+        },
+        "currency": "BRL"
+      },
+      {
+        "code": "BS",
+        "name": "Bahamas",
+        "continent": {
+          "code": "NA",
+          "name": "North America"
+        },
+        "currency": "BSD"
+      },
+      {
+        "code": "BT",
+        "name": "Bhutan",
+        "continent": {
+          "code": "AS",
+          "name": "Asia"
+        },
+        "currency": "BTN,INR"
+      },
+      {
+        "code": "BV",
+        "name": "Bouvet Island",
+        "continent": {
+          "code": "AN",
+          "name": "Antarctica"
+        },
+        "currency": "NOK"
+      },
+      {
+        "code": "BW",
+        "name": "Botswana",
+        "continent": {
+          "code": "AF",
+          "name": "Africa"
+        },
+        "currency": "BWP"
+      },
+      {
+        "code": "BY",
+        "name": "Belarus",
+        "continent": {
+          "code": "EU",
+          "name": "Europe"
+        },
+        "currency": "BYN"
+      },
+      {
+        "code": "BZ",
+        "name": "Belize",
+        "continent": {
+          "code": "NA",
+          "name": "North America"
+        },
+        "currency": "BZD"
+      },
+      {
+        "code": "CA",
+        "name": "Canada",
+        "continent": {
+          "code": "NA",
+          "name": "North America"
+        },
+        "currency": "CAD"
+      },
+      {
+        "code": "CC",
+        "name": "Cocos [Keeling] Islands",
+        "continent": {
+          "code": "AS",
+          "name": "Asia"
+        },
+        "currency": "AUD"
+      },
+      {
+        "code": "CD",
+        "name": "Democratic Republic of the Congo",
+        "continent": {
+          "code": "AF",
+          "name": "Africa"
+        },
+        "currency": "CDF"
+      },
+      {
+        "code": "CF",
+        "name": "Central African Republic",
+        "continent": {
+          "code": "AF",
+          "name": "Africa"
+        },
+        "currency": "XAF"
+      },
+      {
+        "code": "CG",
+        "name": "Republic of the Congo",
+        "continent": {
+          "code": "AF",
+          "name": "Africa"
+        },
+        "currency": "XAF"
+      },
+      {
+        "code": "CH",
+        "name": "Switzerland",
+        "continent": {
+          "code": "EU",
+          "name": "Europe"
+        },
+        "currency": "CHE,CHF,CHW"
+      },
+      {
+        "code": "CI",
+        "name": "Ivory Coast",
+        "continent": {
+          "code": "AF",
+          "name": "Africa"
+        },
+        "currency": "XOF"
+      },
+      {
+        "code": "CK",
+        "name": "Cook Islands",
+        "continent": {
+          "code": "OC",
+          "name": "Oceania"
+        },
+        "currency": "NZD"
+      },
+      {
+        "code": "CL",
+        "name": "Chile",
+        "continent": {
+          "code": "SA",
+          "name": "South America"
+        },
+        "currency": "CLF,CLP"
+      },
+      {
+        "code": "CM",
+        "name": "Cameroon",
+        "continent": {
+          "code": "AF",
+          "name": "Africa"
+        },
+        "currency": "XAF"
+      },
+      {
+        "code": "CN",
+        "name": "China",
+        "continent": {
+          "code": "AS",
+          "name": "Asia"
+        },
+        "currency": "CNY"
+      },
+      {
+        "code": "CO",
+        "name": "Colombia",
+        "continent": {
+          "code": "SA",
+          "name": "South America"
+        },
+        "currency": "COP"
+      }
+    ]
+  }
+}

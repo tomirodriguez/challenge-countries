@@ -45,7 +45,7 @@ const useCountries = (): {
     else dispatch(loadFinished());
   }, [loaded, dispatch]);
 
-  useEffect(() => {
+  useEffect(() => {    
     if (data) {
       let continentsHash: { [id: string]: string } = {};
       const currenciesSet = new Set<string>();

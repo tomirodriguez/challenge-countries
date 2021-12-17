@@ -1,0 +1,24 @@
+{
+  "data": {
+    "country": {
+      "code": "AL",
+      "name": "Albania",
+      "continent": {
+        "code": "EU",
+        "name": "Europe",
+        "__typename": "Continent"
+      },
+      "currency": "ALL",
+      "languages": [
+        {
+          "code": "sq",
+          "name": "Albanian",
+          "native": "Shqip",
+          "__typename": "Language"
+        }
+      ],
+      "capital": "Tirana",
+      "__typename": "Country"
+    }
+  }
+}

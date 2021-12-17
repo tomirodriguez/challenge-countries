@@ -11,7 +11,7 @@ interface PropTypes {
 export default function SearchView({ countries, onCountrySelected }: PropTypes) {
   return (
     <div className={`d-flex card lateralView ${styles.searchView}`} style={{ position: "relative" }}>
-      <ul className="w-100" aria-label={"Filtered countries list"}>
+      <ul className="w-100" aria-label={"Filtered countries list"} role='list'>
         {countries.map((country) => {
           return (
             <li key={country.code} onClick={() => onCountrySelected(country)}>
